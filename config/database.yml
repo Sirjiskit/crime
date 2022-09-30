@@ -14,6 +14,7 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -23,9 +24,11 @@ default: &default
 
 development:
   <<: *default
-  host: localhost
-  
-  database: crms_development
+  host: ec2-54-91-223-99.compute-1.amazonaws.com
+  username: jacrbsvszwduem
+  database: dbt0lhjj5sppo1
+  port: 5432
+  password: 6760099634383e2b20420f27910345e5f5f47833b8d52537e17bd5e560b1430a
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -82,6 +85,8 @@ test:
 #
 production:
   <<: *default
-  database: crms_production
-  username:
-  password: <%= ENV['CRMS_DATABASE_PASSWORD'] %>
+  host: ec2-54-91-223-99.compute-1.amazonaws.com
+  username: jacrbsvszwduem
+  database: dbt0lhjj5sppo1
+  port: 5432
+  password: 6760099634383e2b20420f27910345e5f5f47833b8d52537e17bd5e560b1430a
